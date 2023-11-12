@@ -1,0 +1,12 @@
+# 服务名
+spring:
+  application:
+    name: user-service
+# 注册到Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka/
+# 服务端口号
+server:
+  port: 9092
