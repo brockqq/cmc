@@ -1,0 +1,291 @@
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --text: #1f2328;
+  --muted: #656d76;
+  --border: #d0d7de;
+  --primary: #2f6feb;
+  --primary-hover: #1f5fd6;
+  --danger: #cf222e;
+  --success: #1a7f37;
+  --warning: #9a6700;
+  --pin-bg: #fff8c5;
+  --event-bg: #ddf4ff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --text: #e6edf3;
+    --muted: #8d96a0;
+    --border: #30363d;
+    --primary: #4c8dff;
+    --primary-hover: #6ea2ff;
+    --danger: #ff7b72;
+    --success: #3fb950;
+    --warning: #d29922;
+    --pin-bg: #3b2e0a;
+    --event-bg: #0c2d4a;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.75rem;
+}
+.card.narrow {
+  max-width: 420px;
+  margin: 0 auto;
+}
+.card h1 {
+  margin: 0 0 1.25rem;
+  font-size: 1.4rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+.field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.field input {
+  padding: 0.55rem 0.7rem;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.field input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: -1px;
+}
+.field .error {
+  color: var(--danger);
+  font-size: 0.85rem;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button.link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.alert {
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border: 1px solid currentColor;
+}
+.alert.error {
+  color: var(--danger);
+}
+.alert.success {
+  color: var(--success);
+}
+
+.hint {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+select {
+  padding: 0.3rem 0.45rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+button.link.danger {
+  color: var(--danger);
+}
+button.link:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.05rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  color: var(--muted);
+}
+.badge.manager {
+  color: var(--primary);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+th,
+td {
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.head h1 {
+  margin: 0;
+}
+
+.btn.small {
+  width: auto;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+}
+.btn.secondary {
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+.btn.secondary:hover:not(:disabled) {
+  background: var(--border);
+}
+
+.field textarea {
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  resize: vertical;
+}
+.field select {
+  padding: 0.55rem 0.7rem;
+  font-size: 1rem;
+}
+
+/* Inline create/edit forms */
+.editor {
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.editor .field input,
+.editor .field textarea,
+.editor .field select {
+  background: var(--surface);
+}
+.editor .actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.editor .actions .btn {
+  width: auto;
+  padding: 0.5rem 1.25rem;
+}
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+.chip {
+  padding: 0.25rem 0.8rem;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.chip.active {
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.badge.pin {
+  color: var(--warning);
+}
+.badge.committee {
+  color: var(--success);
+}
