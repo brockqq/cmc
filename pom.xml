@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.7.17-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>CMC</artifactId>
@@ -21,12 +22,69 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.196</version>
+        </dependency>		
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-core</artifactId>
+			<version>1.1.45</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		
+        <!-- business deps -->
+        <dependency>
+            <groupId>ch.ifocusit.livingdoc</groupId>
+            <artifactId>livingdoc-annotations</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.ifocusit</groupId>
+            <artifactId>plantuml-builder</artifactId>
+            <version>2.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.thoughtworks.qdox</groupId>
+            <artifactId>qdox</artifactId>
+            <version>2.0-M5</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.robwin</groupId>
+            <artifactId>markup-document-builder</artifactId>
+            <version>0.1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.spullara.mustache.java</groupId>
+            <artifactId>compiler</artifactId>
+            <version>0.9.5</version>
+        </dependency>		
+<dependency>
+    <groupId>com.thoughtworks.qdox</groupId>
+    <artifactId>qdox</artifactId>
+    <version>2.0-M10</version>
+</dependency>        
+  <dependency>
+    <groupId>org.soot-oss</groupId>
+    <artifactId>soot</artifactId>
+    <version>4.3.0</version>
+  </dependency>
 	</dependencies>
 
 	<build>

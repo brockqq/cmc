@@ -10,11 +10,14 @@ import com.cmc.demo.repository.PaymentRepository;
 
 @Component
 public class PaymentService {
-
-	@Autowired
+	public static void main(String[] args) {
+		PaymentService PaymentService = new PaymentService();
+		PaymentService.queryByKey("123");
+	}
 	PaymentRepository repository ;
 	
 	public List<Object> queryByKey(String key){
+		repository = new PaymentRepository();
 		return repository.queryByKey(key);
 	}
 	

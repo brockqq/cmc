@@ -1,12 +1,16 @@
 # 服务名
 spring:
   application:
-    name: user-service
-# 注册到Eureka
+    name: user-servic
+  jpa:
+    generate-ddl: false
+    open-in-view: false
+    hibernate:
+      ddl-auto: update  # 當 spring boot entity 有修改時, 會自動修改 DB scheam
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:10000/eureka/
 # 服务端口号
 server:
-  port: 9092
+  port: 9091
